@@ -1,0 +1,21 @@
+{
+  "name": "com.ringo.service-locator",
+  "version": "1.0.0",
+  "displayName": "Service Locator Pattern",
+  "description": "Package for setting up a service locator.",
+  
+  "unity": "6000.0",
+  "unityRelease": "34f1",
+  
+  "keywords": [
+    "Service Locator",
+    "Architecture"
+  ],
+  
+  "author": {
+    "name": "Oskar Norberg",
+    "url": "https://github.com/Oskar-Norberg"
+  },
+
+  "licensesUrl": "https://www.gnu.org/licenses/gpl-3.0.en.html"
+}
