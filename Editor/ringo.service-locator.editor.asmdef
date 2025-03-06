@@ -1,7 +1,7 @@
 {
     "name": "ringo.service-locator.editor",
     "rootNamespace": "",
-    "references": [],
+    "references": ["GUID:53423a35ff42ab94f82a82642e86bc42"],
     "includePlatforms": [
         "Editor"
     ],
