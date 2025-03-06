@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 namespace ringo.ServiceLocator
 {
@@ -19,7 +18,7 @@ namespace ringo.ServiceLocator
         }
         private static ServiceLocator _instance;
 
-        private Dictionary<Type, object> _services = new Dictionary<Type, object>();
+        private Dictionary<Type, System.Object> _services = new();
 
         private void Awake()
         {
@@ -32,7 +31,7 @@ namespace ringo.ServiceLocator
             _instance = this;
         }
     
-        public void Register<T>(T service)
+        public void Register<T>(T service) where T : class
         {
             var type = typeof(T);
         
@@ -45,7 +44,7 @@ namespace ringo.ServiceLocator
             _services.Add(type, service);
         }
     
-        public void Unregister<T>()
+        public void Unregister<T>() where T : class
         {
             var type = typeof(T);
         
@@ -58,7 +57,7 @@ namespace ringo.ServiceLocator
             _services.Remove(type);
         }
 
-        public T GetService<T>() where T : Object
+        public T GetService<T>() where T : class
         {
             var service = _services[typeof(T)];
 
