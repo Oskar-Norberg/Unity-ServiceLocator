@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace ServiceLocator
+namespace ringo.ServiceLocator
 {
     public class ServiceLocator : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace ServiceLocator.Editor
+namespace ringo.ServiceLocator.Editor
 {
     public static class ServiceLocatorEditor
     {
