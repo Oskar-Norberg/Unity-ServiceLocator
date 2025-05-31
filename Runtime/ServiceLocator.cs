@@ -59,15 +59,29 @@ namespace ringo.ServiceLocator
 
         public T GetService<T>() where T : class
         {
-            var service = _services[typeof(T)];
-
-            if (service == null)
+            if (_services.TryGetValue(typeof(T), out var service))
             {
-                Debug.LogWarning($"Service of type {typeof(T)} is not registered");
-                return null;
+                return service as T;
             }
 
-            return _services[typeof(T)] as T;
+            return null;
+        }
+        
+        public bool TryGetService<T>(out T service) where T : class
+        {
+            if (_services.TryGetValue(typeof(T), out var foundService))
+            {
+                service = foundService as T;
+                return true;
+            }
+
+            service = null;
+            return false;
+        }
+        
+        public bool HasService<T>() where T : class
+        {
+            return _services.ContainsKey(typeof(T));
         }
     }
 }
