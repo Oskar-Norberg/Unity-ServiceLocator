@@ -33,8 +33,15 @@ namespace ringo.ServiceLocator
     
         public void Register<T>(T service) where T : class
         {
+            if (service == null)
+            {
+                Debug.LogError("Cannot register a null service");
+                throw new ArgumentNullException(nameof(service), "Service cannot be null");
+            }
+            
             var type = typeof(T);
         
+            // Dont override existing service
             if (_services.ContainsKey(type))
             {
                 Debug.LogWarning($"Service of type {type} is already registered");
