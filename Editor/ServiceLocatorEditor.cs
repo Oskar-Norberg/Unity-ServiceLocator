@@ -10,6 +10,7 @@ namespace ringo.ServiceLocator.Editor
         {
             var serviceLocator = new GameObject("ServiceLocator").AddComponent<ServiceLocator>();
             EditorGUIUtility.PingObject(serviceLocator);
+            EditorUtility.SetDirty(serviceLocator);
         }
     }
 }
