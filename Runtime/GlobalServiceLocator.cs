@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace ringo.ServiceLocator
 {
-    public class ServiceLocator : MonoBehaviour
+    public class GlobalServiceLocator : MonoBehaviour
     {
-        public static ServiceLocator Instance
+        public static GlobalServiceLocator Instance
         {
             get
             {
@@ -16,7 +16,7 @@ namespace ringo.ServiceLocator
                 return _instance;
             }
         }
-        private static ServiceLocator _instance;
+        private static GlobalServiceLocator _instance;
 
         private Dictionary<Type, System.Object> _services = new();
 

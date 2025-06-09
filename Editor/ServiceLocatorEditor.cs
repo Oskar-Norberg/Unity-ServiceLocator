@@ -8,7 +8,7 @@ namespace ringo.ServiceLocator.Editor
         [MenuItem("GameObject/ServiceLocator")]
         public static void AddServiceLocatorToScene()
         {
-            var serviceLocator = new GameObject("ServiceLocator").AddComponent<ServiceLocator>();
+            var serviceLocator = new GameObject("ServiceLocator").AddComponent<GlobalServiceLocator>();
             EditorGUIUtility.PingObject(serviceLocator);
             EditorUtility.SetDirty(serviceLocator);
         }
